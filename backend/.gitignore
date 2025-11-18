@@ -1,0 +1,6 @@
+node_modules/
+google-credentials.json
+*.json.key
+.env
+snackmood-*.json
+.vercel

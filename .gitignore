@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+.vercel
+*.json.key
+google-credentials.json
+backend/snackmood-*.json

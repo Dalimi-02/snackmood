@@ -2,14 +2,14 @@
 
 ## Production URLs
 
-**Frontend (Main App):** https://snackmood-dtjb.vercel.app/
-**Backend (API):** https://snackmood.vercel.app
+**Frontend (Main App):** https://snackmood-6jgh.vercel.app/
+**Backend (API):** https://snackmood-dtjb.vercel.app
 
 ---
 
 ## How to Use
 
-1. Visit: https://snackmood-dtjb.vercel.app/
+1. Visit: https://snackmood-6jgh.vercel.app/
 2. Upload a snack image (photo of nutrition label)
 3. See the spooky results! 👻
 4. Click 🎵 for background music
@@ -29,7 +29,7 @@
 
 ## API Endpoints
 
-**Base URL:** https://snackmood.vercel.app
+**Base URL:** https://snackmood-dtjb.vercel.app
 
 - `GET /` - API info
 - `GET /health` - Health check
@@ -49,6 +49,6 @@
 
 ## Share Your App!
 
-Send this link to friends: https://snackmood-dtjb.vercel.app/
+Send this link to friends: https://snackmood-6jgh.vercel.app/
 
 Let them scan their snacks and see the spooky health ratings! 🎃👻

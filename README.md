@@ -1,4 +1,6 @@
-# SnackMood — Your Spooky Snack Sidekick (Demo)
+# 🎃 SnackMood — Your Spooky Snack Sidekick
+
+**Live App:** https://snackmood-dtjb.vercel.app/
 
 ## What you get
 - Frontend: Vite + React (minimal), simple UI to upload a snack image and show results.

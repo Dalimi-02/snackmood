@@ -7,6 +7,24 @@ const upload = multer({ storage: multer.memoryStorage() });
 app.use(cors());
 app.use(express.json());
 
+// --- Welcome route ---
+app.get('/', (req, res) => {
+  res.json({
+    message: '🎃 SnackMood Backend API',
+    status: 'running',
+    endpoints: {
+      upload: 'POST /api/upload - Upload snack image',
+      analyze: 'POST /api/analyze - Analyze snack data'
+    },
+    version: '1.0.0'
+  });
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // --- OCR endpoint with Google Vision API ---
 app.post('/api/upload', upload.single('image'), async (req, res) => {
   try {

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "type": "commonjs",
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS=./snackmood-54c3078c5caf.json node index.js",
-    "dev": "GOOGLE_APPLICATION_CREDENTIALS=./snackmood-54c3078c5caf.json nodemon index.js"
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=./vision.json node index.js",
+    "dev": "GOOGLE_APPLICATION_CREDENTIALS=./vision.json nodemon index.js"
   },
   "dependencies": {
     "@google-cloud/vision": "^5.3.4",

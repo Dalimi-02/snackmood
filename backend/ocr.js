@@ -5,17 +5,25 @@ let client = null;
 let visionEnabled = false;
 
 try {
-  // Check if credentials are available
-  if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+  // Check if credentials are available (file path or JSON string)
+  if (process.env.GOOGLE_CREDENTIALS_JSON) {
+    // For Vercel: credentials passed as JSON string
+    const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+    client = new vision.ImageAnnotatorClient({ credentials });
+    visionEnabled = true;
+    console.log('✅ Google Vision API enabled (from env)');
+  } else if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+    // For local: credentials from file path
     client = new vision.ImageAnnotatorClient();
     visionEnabled = true;
-    console.log('✅ Google Vision API enabled');
+    console.log('✅ Google Vision API enabled (from file)');
   } else {
     console.log('⚠️  Google Vision API not configured. Using mock data.');
     console.log('   See GOOGLE_VISION_SETUP.md for setup instructions.');
   }
 } catch (error) {
   console.warn('⚠️  Google Vision API initialization failed. Using mock data.');
+  console.warn('   Error:', error.message);
   client = null;
 }
 

@@ -67,8 +67,8 @@ Perfect for development and small-scale use!
 
 ## Current Status
 
-✅ Credentials file found: `snackmood-54c3078c5caf.json`
+✅ Credentials file: `vision.json`
 ✅ Added to .gitignore (safe from git commits)
-⚠️  Billing needs to be enabled on your Google Cloud project
+✅ Google Vision API configured
 
-Visit: https://console.developers.google.com/billing/enable?project=567890185630
+**Note:** Make sure billing is enabled on your Google Cloud project for the Vision API to work.

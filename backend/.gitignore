@@ -3,4 +3,5 @@ google-credentials.json
 *.json.key
 .env
 snackmood-*.json
+vision.json
 .vercel

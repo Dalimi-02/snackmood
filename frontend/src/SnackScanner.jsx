@@ -117,10 +117,14 @@ export default function SnackScanner(){
     setLoading(true)
     const fd = new FormData()
     fd.append('image', file)
+    
+    // Use environment variable for API URL, fallback to localhost for development
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+    
     try{
-      const upl = await fetch('http://localhost:3000/api/upload', { method:'POST', body: fd })
+      const upl = await fetch(`${API_URL}/api/upload`, { method:'POST', body: fd })
       const { ingredients, nutrition } = await upl.json()
-      const analyze = await fetch('http://localhost:3000/api/analyze', {
+      const analyze = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({ ingredients, nutrition })

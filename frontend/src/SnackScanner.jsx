@@ -121,18 +121,28 @@ export default function SnackScanner(){
     // Use environment variable for API URL, fallback to localhost for development
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
     
+    console.log('Using API URL:', API_URL) // Debug log
+    
     try{
       const upl = await fetch(`${API_URL}/api/upload`, { method:'POST', body: fd })
+      if (!upl.ok) {
+        throw new Error(`Upload failed: ${upl.status} ${upl.statusText}`)
+      }
       const { ingredients, nutrition } = await upl.json()
+      
       const analyze = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({ ingredients, nutrition })
       })
+      if (!analyze.ok) {
+        throw new Error(`Analysis failed: ${analyze.status} ${analyze.statusText}`)
+      }
       const data = await analyze.json()
       setResult(data)
     }catch(err){
-      alert('Error: ' + err.message)
+      console.error('Full error:', err)
+      alert('Error: ' + err.message + '\n\nAPI URL: ' + API_URL)
     }finally{
       setLoading(false)
     }

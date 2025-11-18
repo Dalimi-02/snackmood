@@ -22,7 +22,11 @@ app.get('/', (req, res) => {
 
 // Health check endpoint
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    visionConfigured: !!process.env.GOOGLE_CREDENTIALS_JSON || !!process.env.GOOGLE_APPLICATION_CREDENTIALS
+  });
 });
 
 // --- OCR endpoint with Google Vision API ---

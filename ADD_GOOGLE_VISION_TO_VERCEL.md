@@ -68,10 +68,6 @@ Check the Vercel deployment logs:
 - Make sure you redeployed after adding the variable
 - Check deployment logs for errors
 
-### "Billing not enabled" error?
-- Go to https://console.cloud.google.com/billing
-- Enable billing for your project
-- Wait a few minutes and try again
 
 ### Want to test locally?
 Your local setup already works! Just run:
